@@ -19,35 +19,50 @@ class Products extends Seeder
             'Price'=>150,
             'QuantityInStock'=>15
         ]);
-        DB::table('supplier')->insert([
+        DB::table('suppliers')->insert([
             'SupplierId'=>2,
             'SupplierName'=>'juan',
             'ContactNo'=>69123,
             'Address'=>'bataan'
         ]);
-        DB::table('category')->insert([
-            'SuplierID'=>3,
-            'Supplier_Name'=>'juan',
+        DB::table('categories')->insert([
+            'SupplierID'=>3,
+            'SupplierName'=>'juan',
         ]);
-        DB::table('order')->insert([
+        DB::table('orders')->insert([
             'OrderID'=>4,
             'OrderDate'=>'December',
             'TotalAmount'=>100,
             'Status'=>'Out of stock'
         ]);
-        DB::table('customer')->insert([
+        DB::table('customers')->insert([
             'CustomerID'=>5,
             'FirstName'=>'Juan',
             'LastName'=>'Dela Cruz',
             'Email'=>'juan@mail.com',
             'Phone'=>69123
         ]);
-        DB::table('orderdetail')->insert([
+        DB::table('order_details')->insert([
             'OrderDetailID'=>6,
             'OrderID'=>4,
             'ProductID'=>1,
             'Quantity'=>600,
             'Subtotal'=>1000
+        ]);
+
+
+        \App\Models\User::factory()->create([
+            'name' => 'Administrator',
+            'username' => 'admin'
+        ]);
+        \App\Models\User::factory()->create([
+            'name' => 'Staff',
+            'username' => 'staff'
+        ]);
+
+        \App\Models\User::factory()->create([
+            'name' => 'Carl',
+            'username' => 'carl'
         ]);
         
     }

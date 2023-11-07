@@ -9,7 +9,6 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\OrderDetailController;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +21,7 @@ use App\Http\Controllers\OrderDetailController;
 */
 
 Route::get('/',[ProductController::class,'index'])->middleware('auth')->name('product');
+Route::post('/',[AuthController::class,'product'])->middleware('auth')->name('product.submit');
 
 Route::get('/supplier',[SupplierController::class,'index'])->middleware('auth')->name('supplier');
 Route::post('/supplier',[AuthController::class,'supplier'])->middleware('auth')->name('supplier.submit');

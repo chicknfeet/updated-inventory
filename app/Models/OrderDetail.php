@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Productions extends Model
+class OrderDetail extends Model
 {
     use HasFactory;
-    
-    protected $ProductId, $ProductName, $Description, $Price, $QuantityInStock;
-    
+
+    protected $OrderDetailID, $OrderID, $ProductID, $Quantity, $Subtotal;
 }

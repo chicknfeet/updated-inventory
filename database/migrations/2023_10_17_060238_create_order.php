@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('order', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->integerIncrements('OrderID');
             $table->string('OrderDate');
             $table->integer('TotalAmount');

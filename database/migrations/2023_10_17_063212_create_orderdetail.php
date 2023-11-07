@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orderdetail', function (Blueprint $table) {
+        Schema::create('order_details', function (Blueprint $table) {
             $table->integerIncrements('OrderDetailID');
-            $table->unsignedInteger('OrderId');
-            $table->foreign('OrderID')->references('OrderID')->on('order');
-            $table->unsignedInteger('productid');
+            $table->unsignedInteger('OrderID');
+            $table->foreign('OrderID')->references('OrderID')->on('orders');
+            $table->unsignedInteger('ProductID');
             $table->foreign('ProductID')->references('ProductID')->on('products');
             $table->integer('Quantity');
             $table->integer('Subtotal');
